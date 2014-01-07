@@ -15,22 +15,22 @@ feature "User creates a comment", %q{
  scenario 'add valid comment to video' do
     comment = FactoryGirl.create(:comment)
 
-    # visit video_path(comment)
-    # fill_in 'Comment', with: 'Awesome footage!'
-    # click_on 'Submit'
+    visit video_path(comment)
+    fill_in 'Comment', with: 'Awesome footage!'
+    click_on 'Submit'
 
-    # expect(page).to have_content comment.content
-    # expect(page).to have_content 'Awesome footage!'
+    expect(page).to have_content comment.content
+    expect(page).to have_content 'Awesome footage!'
   end
 
   scenario 'invalid comment with no body text' do
     comment = FactoryGirl.create(:comment)
 
-    # visit video_path(comment)
-    # click_on 'Submit'
+    visit video_path(comment)
+    click_on 'Submit'
 
-    # expect(page).to have_content comment.content
-    # expect(page).to have_content 'Error'
+    expect(page).to have_content comment.content
+    expect(page).to have_content 'Error'
   end
 
 end
