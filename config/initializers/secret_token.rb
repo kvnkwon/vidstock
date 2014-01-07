@@ -13,4 +13,4 @@ def secure_token
   end
 end
 
-PropertyManagement::Application.config.secret_key_base = secure_token
+Vidstock::Application.config.secret_key_base = secure_token
