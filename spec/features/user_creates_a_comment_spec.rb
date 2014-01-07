@@ -13,23 +13,21 @@ feature "User creates a comment", %q{
 # * If I specify content text, the comment is saved and viewable on the commented video's page
 
  scenario 'add valid comment to video' do
-    comment = FactoryGirl.create(:comment)
+    video = FactoryGirl.create(:video)
 
-    visit video_path(comment)
+    visit video_path(video)
     fill_in 'Comment', with: 'Awesome footage!'
     click_on 'Submit'
 
-    expect(page).to have_content comment.content
     expect(page).to have_content 'Awesome footage!'
   end
 
   scenario 'invalid comment with no body text' do
-    comment = FactoryGirl.create(:comment)
+    video = FactoryGirl.create(:video)
 
-    visit video_path(comment)
+    visit video_path(video)
     click_on 'Submit'
 
-    expect(page).to have_content comment.content
     expect(page).to have_content 'Error'
   end
 

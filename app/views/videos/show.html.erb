@@ -1,0 +1,14 @@
+<%= @video.title %>
+<%= @video.description %>
+<%= @video.downloads %>
+
+<% @comments.each do |comment| %>
+<p><%= comment.content %></p>
+<% end %>
+
+<%= simple_form_for [@video, @comment] do |f| %>
+
+  <%= f.input :content, label: 'Comment' %>
+  <%= f.button :submit, 'Submit' %>
+
+<% end %>

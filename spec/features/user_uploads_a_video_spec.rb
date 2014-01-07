@@ -10,13 +10,12 @@ feature "User uploads a video", %q{
 
 # * When uploading a video I must specify the title and description
 # * If I do not specify a title or description, an error is displayed
-# * I can optionally add tags to the video.
 # * If I specify a title and description, the video is uploaded and viewable on the video's page
 # * The download count for a new video is defaulted as 0.
 # * I have administrative rights for the video that I uploaded.
 
 
-  scenario 'valid title and description' do
+  context 'with valid title and description' do
     it 'uploads a video' do
       count = Video.all.count
       visit new_video_path
@@ -29,13 +28,13 @@ feature "User uploads a video", %q{
     end
   end
 
-  scenario 'invalid title and description' do
+  context 'with invalid title and description' do
     it 'does not upload a video' do
       count = Video.all.count
-      visit new_learning_path
+      visit new_video_path
       click_on "Upload"
 
-      expect(page).to have_content("Error")
+      expect(page).to have_content("Error!")
       expect(Video.all.count).to eq(count)
     end
   end
