@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrapjs/modernizr-2.6.2-respond-1.1.0.min
+//= require bootstrapjs/bootstrap.min
+//= require bootstrapjs/main
+//= require bootstrapjs/jquery.flexslider-min
+
 //= require_tree .
