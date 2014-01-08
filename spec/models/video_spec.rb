@@ -6,6 +6,7 @@ describe Video do
     it { should have_db_column(:title).of_type(:string) }
     it { should have_db_column(:description).of_type(:text) }
     it { should have_db_column(:downloads).of_type(:integer) }
+    it { should have_db_column(:user_id).of_type(:integer) }
   end
 
   describe "Validation Tests" do
@@ -20,10 +21,13 @@ describe Video do
     let(:invalid_amount){['99,999', -3]}
     it { should have_valid(:downloads).when(0, 99999) }
     it { should_not have_valid(:downloads).when(*invalid_amount) }
+
+    it { should validate_numericality_of(:user_id).only_integer }
   end
 
   describe "Association Tests" do
     it { should have_many(:comments).dependent(:destroy) }
+    it { should belong_to(:user) }
   end
 
 end
