@@ -5,5 +5,6 @@ FactoryGirl.define do
     title "MyString"
     downloads 1
     description "MyText"
+    user
   end
 end

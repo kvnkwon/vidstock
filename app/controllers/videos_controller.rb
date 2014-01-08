@@ -11,6 +11,8 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    @video.user = current_user
+    
     if @video.save
       flash[:notice] = 'Video was successfully uploaded!'
       redirect_to video_path(@video)  
