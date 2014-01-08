@@ -10,6 +10,19 @@
   <% flash.each do |name, msg| -%>
     <%= content_tag :div, msg, class: name %>
   <% end -%>
+
+  <% if current_user && current_user.admin? %>
+    HEY BRO
+  <% end %>
+
+  <div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.username %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Register", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+  </div>
 <%= yield %>
 
 </body>

@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:show]
   def index
     @videos = Video.all
   end
@@ -10,6 +11,8 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    @video.user = current_user
+    
     if @video.save
       flash[:notice] = 'Video was successfully uploaded!'
       redirect_to video_path(@video)  
@@ -28,7 +31,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :description, :downloads)
+    params.require(:video).permit(:title, :description, :downloads, :user_id)
   end
 
 end
