@@ -30,7 +30,7 @@ feature "User uploads a video", %q{
       fill_in "Email", with: "kwon@email.com"
       fill_in "Password", with: "12345678", match: :prefer_exact
       fill_in "Password confirmation", with: "12345678", match: :prefer_exact
-      click_on "Register"
+      click_on "Sign up"
       count = Video.all.count
       visit new_video_path
       fill_in "Title", with: "Beach sunset"
@@ -49,7 +49,7 @@ feature "User uploads a video", %q{
       fill_in "Email", with: "kwon@email.com"
       fill_in "Password", with: "12345678", match: :prefer_exact
       fill_in "Password confirmation", with: "12345678", match: :prefer_exact
-      click_on "Register"
+      click_on "Sign up"
       count = Video.all.count
       visit new_video_path
       click_on "Upload"
