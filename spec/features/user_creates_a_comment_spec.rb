@@ -11,10 +11,10 @@ feature "User creates a comment", %q{
 # * For a particular video I must specify content text for the comment
 # * If I do not specify content text, an error is displayed
 # * If I specify content text, the comment is saved and viewable on the commented video's page
-
+ let(:user) { FactoryGirl.create(:user) }
  scenario 'add valid comment to video' do
     video = FactoryGirl.create(:video)
-
+    sign_in_as(user)
     visit video_path(video)
     fill_in 'Comment', with: 'Awesome footage!'
     click_on 'Submit'
@@ -24,7 +24,7 @@ feature "User creates a comment", %q{
 
   scenario 'invalid comment with no body text' do
     video = FactoryGirl.create(:video)
-
+    sign_in_as(user)
     visit video_path(video)
     click_on 'Submit'
 
