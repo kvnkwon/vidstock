@@ -8,23 +8,15 @@
           </button>
           
           <%= link_to root_path, class: "navbar-brand" do %>
-            VIDSTOCK
+            <logo>VIDSTOCK</logo>
           <%- end -%>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">Home</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Work <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="3-column.html">3 Column</a></li>
-                  <li><a href="4-column.html">4 Column</a></li>
-                  <li><a href="individual-work.html">Individual Work</a></li>
-                </ul>
-              </li>
               <li><a href="blog.html">Browse Videos</a></li>
               <li><a href="blog.html">Upload</a></li>
-              <li><a href="contact.php">My Profile</a></li>
+              <li><a href="contact.php">Me</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -37,6 +29,14 @@
         <div class="row margin-40">
           <div class="col-sm-12 text-center">
             <headertext>VIDSTOCK</headertext>
+            <div class="searchborder">
+              <div class="searchbar_container">
+                <input id = "searchbar" type="text" placeholder="Search videos by title or tags..">
+              </div>
+              <div class="searchbtn_container"><a id="searchbutton" href="blog-article.html">Search</a></div>
+            </div>
+            <a class="signinbtn" href="blog-article.html">Login</a>
+            <a class="registerbtn" href="blog-article.html">Sign up</a>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
       <div class="container">
         <div class="row text-center">
           
-          <!--Seciton 1-->
+          <!--Section 1-->
           <div class="col-sm-4 service margin-30">
             <a href="#">
               <i class="fa fa-mobile-phone fa-4x light-gray"></i>
@@ -57,7 +57,7 @@
             </a>
           </div>
           
-          <!--Seciton 2-->
+          <!--Section 2-->
           <div class="col-sm-4 service margin-30">
             <a href="#">
               <i class="fa fa-thumbs-up fa-4x light-gray"></i>
@@ -67,7 +67,7 @@
 
           </div>
           
-          <!--Seciton 3-->
+          <!--Section 3-->
           <div class="col-sm-4 service margin-30">
             <a href="#">
               <i class="fa fa-flag fa-4x light-gray"></i>
@@ -81,9 +81,67 @@
       </div>
     </section>
     
+    <!--Work-->
+    <section id="content2" class="section">
+      <div class="container text-center">          
+          
+          <div class="row margin-40">
+            
+            <!--Project Thumbnail One-->
+            <div class="col-sm-4">
+              <div class="thumbs">
+                <img src="img/portfolio1.jpg" class="img-responsive" alt="Image Size 430x280">
+                <a href="individual-work.html">
+                  <span class="title">
+                    <span><i class="fa fa-link fa-2x"></i></span>
+                  </span> 
+                </a>
+              </div>
+              
+              <div class="project-title margin-30">
+                <h4>Breakroom</h4>
+              </div>
+            </div>
+            
+            <!--Project Thumbnail Two-->
+            <div class="col-sm-4">
+              <div class="thumbs">
+                <img src="img/portfolio2.jpg" class="img-responsive" alt="Image Size 430x280">
+                <a href="individual-work.html">
+                  <span class="title">
+                    <span><i class="fa fa-link fa-2x"></i></span>
+                  </span> 
+                </a>
+              </div>
+              
+              <div class="project-title margin-30">
+                <h4>White Sneaker</h4>
+              </div>
+            </div>
+            
+            <!--Project Thumbnail Three-->
+            <div class="col-sm-4">
+              <div class="thumbs">
+                <img src="img/portfolio3.jpg" class="img-responsive" alt="Image Size 430x280">
+                <a href="individual-work.html">
+                  <span class="title">
+                    <span><i class="fa fa-link fa-2x"></i></span>
+                  </span> 
+                </a>
+              </div>
+              
+              <div class="project-title margin-30">
+                <h4>Theme Armada</h4>
+              </div>
+            </div>
+            
+            </div><!--End Row of Work-->
+          </div>
+      </div>
+    </section>
     
     <!--Message Section-->
-    <section class="section shaded-callout">
+    <section id="content3" class="section">
       <div class="container">
         <div class="row margin-40">
           <div class="col-sm-12 text-center">
@@ -98,6 +156,7 @@
         </div>
       </div>
     </section>
+
   
           
     
@@ -120,7 +179,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <p>@ Copyright. All Rights Reserved. Created by <a href="http://www.themearmada.com">Theme Armada.</a></p>
+            <p>@ Copyright. All Rights Reserved.</a></p>
           </div>
         </div>
       </div>

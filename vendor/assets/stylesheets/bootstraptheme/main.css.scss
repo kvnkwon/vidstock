@@ -311,6 +311,14 @@ a:hover {
 }
 
 
+logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
 /* ==========================================================================
    Header Styles
    ========================================================================== */
@@ -352,6 +360,8 @@ a:hover {
   height: 650px;
 }
 
+
+
 headertext {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
@@ -359,11 +369,83 @@ headertext {
   line-height: 60px;
   text-transform: uppercase;
   color: #FFFFFF;
-  margin: 0;
+  margin: 140px 0 30px 0;
+  display: block;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
   letter-spacing: 13px;
 }
 
+.searchborder {
+  background-color: #26292B;
+  width: 567px;
+  height: 60px;
+  padding: 12px 2px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+#searchbar {
+  width: 460px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#searchbutton {
+  padding: 10px;
+  margin-left: 3px;
+  vertical-align: auto;
+  width: 160px;
+  height: 40px;
+  background-color: #088A29;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.searchbar_container{
+  float:left;
+  margin-left: 15px;
+}
+
+.searchbtn_container{
+  float:right;
+  margin-top: 8px;
+  margin-right: 15px;
+}
+
+.registerbtn {
+  float:left;
+  margin-top: 40px;
+  margin-left: 355px;
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #FF8000;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+.signinbtn {
+  float:right;
+  margin-top: 40px;
+  margin-right: 355px;
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #00BFFF;
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
 /* ==========================================================================
    Content Styles
    ========================================================================== */
@@ -378,7 +460,14 @@ headertext {
 
 #content2 {
   background: url(../img/grid_noise.png) repeat;
-  background-color: #ebebeb;
+  background-color: #a5b2b9;
+}
+
+#content3 {
+  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf5fd7f5f6_1.JPG');
+  background-repeat: no-repeat center center;
+  background-size: cover;
+  background-color: #E1F5A9;
 }
 
 #page-title {
@@ -900,15 +989,6 @@ h1 {
   margin: auto;
 }
 
-.carousel-caption {
-  max-width: 100%;
-  text-align: center;
-}
-
-.carousel .item {
-  height: 460px;
-}
-
 h2 {
   font-size: 30px;
   line-height: 36px;
@@ -950,14 +1030,6 @@ h1 {
   margin: auto;
 }
 
-.carousel-caption {
-  max-width: 100%;
-  text-align: center;
-}
-
-.carousel .item {
-  height: 460px;
-}
 
 h2 {
   font-size: 30px;
