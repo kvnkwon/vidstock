@@ -13,23 +13,73 @@
   <link rel="shortcut icon" href="/favicon.png">
 </head>
 <body>
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: name %>
-  <% end -%>
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <%= link_to root_path, class: "navbar-brand" do %>
+            VIDSTOCK
+          <%- end -%>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><a href="blog.html">Browse Videos</a></li>
+              <% if user_signed_in? %>
+                <li><a href="blog.html">Upload</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Edit account info', edit_user_registration_path %></li>
+                    <li><a href="4-column.html">My uploads</a></li>
+                    <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                    </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to 'Login', new_user_session_path %></li>
+                <li><%= link_to 'Sign up', new_user_registration_path %></li> 
+              <% end %>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+  <section id="wrapper" class='<%= controller_name + '_' + action_name %>'>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
 
-  <% if current_user && current_user.admin? %>
-    HEY BRO
-  <% end %>
+    <% if current_user && current_user.admin? %>
+      HEY BRO
+    <% end %>
 
-  <div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.username %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Register", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-  </div>
-<%= yield %>
+    <%= yield %>
 
+    <div class="push"></div>
+    
+  </section>
+
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p>@ Copyright. All Rights Reserved.</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

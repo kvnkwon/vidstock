@@ -11,6 +11,36 @@
 /* ==========================================================================
    Global styles
    ========================================================================== */
+* {
+  margin:0
+}
+
+html, body{
+  height:100%
+}
+
+
+#wrapper{
+
+  min-height: 100%;
+  height: auto !important;
+  height:100%;
+  margin: 0 auto -4em;
+  @media (max-width: 480px) {
+    padding: 0;
+    width: 100%;
+  }
+  @media (min-width: 800px) and (max-width: 3000px) {
+    padding: 0;
+    width: 100%;
+  }
+  &.registrations_edit {
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c36ef60f8df_1.JPG) no-repeat center center fixed;
+  }
+  &.sessions_new {
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c36ef60f8df_1.JPG) no-repeat center center fixed;
+  }
+}
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'Open Sans', sans-serif;
@@ -57,6 +87,21 @@ p {
 
 p.lead {
   color: #ff755a;
+}
+
+#delete-account {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #a5b2b9;
+  margin-top: 25px;
+}
+
+#quote {
+  color: #FFFFFF;
+  width: 70%;
+  display: inline-block;
+  font-size: 36px !important;
 }
 
 a {
@@ -210,6 +255,12 @@ a:hover {
 .navbar-inverse .navbar-brand {
   color: white;
   padding: 35px 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 
 .navbar .nav > li > a {
@@ -311,14 +362,7 @@ a:hover {
 }
 
 
-logo {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
+
 /* ==========================================================================
    Header Styles
    ========================================================================== */
@@ -358,11 +402,15 @@ logo {
   background-repeat: no-repeat center center;
   background-size: cover;
   height: 650px;
+  @media (max-width: 480px) {
+    min-width: 100%;
+    height: auto;
+  }
 }
 
 
 
-headertext {
+.headertext {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   font-size: 62px;
@@ -373,79 +421,78 @@ headertext {
   display: block;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
   letter-spacing: 13px;
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin: 75px 0 30px 0;
+  }
 }
 
-.searchborder {
+.search-form {
   background-color: #26292B;
-  width: 567px;
-  height: 60px;
-  padding: 12px 2px;
+  max-width: 567px;
+  display: block;
+  padding: 12px;
   border-radius: 10px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  input[type="text"] {
+    border-radius: 10px;
+    margin-bottom: 0;  
+  }
 }
 
-#searchbar {
-  width: 460px;
-  border-radius: 10px;
-  padding: 10px;
+.search-form-input {
+  display: inline-block;
+  width: 80%;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin-bottom: 1em;
+  }
 }
 
-#searchbutton {
-  padding: 10px;
-  margin-left: 3px;
-  vertical-align: auto;
-  width: 160px;
-  height: 40px;
-  background-color: #088A29;
-  color: #fff;
-  border-radius: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
-.searchbar_container{
-  float:left;
-  margin-left: 15px;
+.search-form-button {
+  display: inline-block;
+  width: 17%;
+  padding-left: 3%;
+
+  @media (max-width: 480px) {
+    padding: 0;
+    width: 100%;
+  }
 }
 
-.searchbtn_container{
-  float:right;
-  margin-top: 8px;
-  margin-right: 15px;
-}
+// .registerbtn {
+//   float:left;
+//   margin-top: 40px;
+//   margin-left: 355px;
+//   padding: 10px;
+//   width: 100px;
+//   height: 50px;
+//   background-color: #FF8000;
+//   color: #fff;
+//   border-radius: 10px;
+//   font-family: 'Open Sans', sans-serif;
+//   font-weight: 800;
+//   font-size: 18px;
+//   text-shadow: 0 1px 1px rgba(0,0,0,.4);
+// }
 
-.registerbtn {
-  float:left;
-  margin-top: 40px;
-  margin-left: 355px;
-  padding: 10px;
-  width: 100px;
-  height: 50px;
-  background-color: #FF8000;
-  color: #fff;
-  border-radius: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
-
-.signinbtn {
-  float:right;
-  margin-top: 40px;
-  margin-right: 355px;
-  padding: 10px;
-  width: 100px;
-  height: 50px;
-  background-color: #00BFFF;
-  color: #fff;
-  border-radius: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
+// .signinbtn {
+//   padding: 10px;
+//   width: 100px;
+//   height: 50px;
+//   background-color: #00BFFF;
+//   color: #fff;
+//   border-radius: 10px;
+//   font-family: 'Open Sans', sans-serif;
+//   font-weight: 800;
+//   font-size: 18px;
+//   text-shadow: 0 1px 1px rgba(0,0,0,.4);
+// }
 /* ==========================================================================
    Content Styles
    ========================================================================== */
@@ -464,10 +511,15 @@ headertext {
 }
 
 #content3 {
-  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf5fd7f5f6_1.JPG');
+  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_529f196a2e69d_1.JPG');
   background-repeat: no-repeat center center;
   background-size: cover;
   background-color: #E1F5A9;
+  background-position: 20% 46%;
+  @media (max-width: 480px) {
+    background-position: 80% 96%;
+    width: 100%;
+  }
 }
 
 #page-title {
@@ -776,7 +828,11 @@ select, input[type="text"], input[type="password"], input[type="datetime"], inpu
    Sign Up Page styles
    ========================================================================== */
 #signup {
-  background: url(../img/testimonial-bg.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   background-size: cover;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -791,6 +847,10 @@ select, input[type="text"], input[type="password"], input[type="datetime"], inpu
   background-color: #ebebeb;
   padding: 40px;
   margin-top: 22px;
+}
+
+.boolean .optional {
+  display: inline-block;
 }
 
 input, button, select, textarea {
@@ -951,8 +1011,12 @@ ul.social-icons li a:hover {
   background: #26292B;
   padding-top: 20px;
   padding-bottom: 20px;
+  width: 100%;
+  height: 75px;
 }
-
+.push {
+  height: 5px;
+}
 #footer p {
   color: #626C72;
   font-size: 11px;
