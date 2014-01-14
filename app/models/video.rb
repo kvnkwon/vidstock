@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+  acts_as_taggable
+
   belongs_to :user, inverse_of: :videos
   has_many :comments, inverse_of: :video, dependent: :destroy
   validates_presence_of :title
