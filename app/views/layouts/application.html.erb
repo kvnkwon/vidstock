@@ -29,9 +29,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path %></li>
-            <li><a href="blog.html">Browse Videos</a></li>
+            <li><%= link_to 'Browse Videos', videos_path %></li>
               <% if user_signed_in? %>
-                <li><a href="blog.html">Upload</a></li>
+                <li><%= link_to 'Upload', new_video_path %></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me<b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -50,9 +50,17 @@
       </div>
     </div>
   <section id="wrapper" class='<%= controller_name + '_' + action_name %>'>
-    <% flash.each do |name, msg| -%>
+    
+    
+      <% flash.each do |name, msg| -%>
+      <div class="alert alert-warning alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= content_tag :div, msg, class: name %>
+    </div>
     <% end -%>
+
+
+    
 
     <% if current_user && current_user.admin? %>
       HEY BRO

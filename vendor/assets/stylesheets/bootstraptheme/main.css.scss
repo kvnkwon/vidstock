@@ -35,10 +35,25 @@ html, body{
     width: 100%;
   }
   &.registrations_edit {
-    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c36ef60f8df_1.JPG) no-repeat center center fixed;
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
   }
   &.sessions_new {
-    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c36ef60f8df_1.JPG) no-repeat center center fixed;
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
+  }
+  &.registrations_new {
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
+  }
+  &.registrations_create {
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
+  }
+  &.registrations_update {
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
+  }
+  &.passwords_new {
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
+  }
+  &.passwords_create {
+    background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
   }
 }
 
@@ -133,6 +148,10 @@ a:hover {
 	color: #FFFFFF;
 	text-decoration: none;
 	transition: all 0.35s ease-in-out;
+}
+
+.btn-sign {
+  margin-top: 4%;
 }
 
 .more:hover {
@@ -506,8 +525,7 @@ a:hover {
 }
 
 #content2 {
-  background: url(../img/grid_noise.png) repeat;
-  background-color: #a5b2b9;
+  background-color: #E1F5A9;
 }
 
 #content3 {
