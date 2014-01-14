@@ -23,11 +23,11 @@
     <% @videos.each do |video| %>
       <tr>
         <td><%= link_to "#{video.title}", video %></td>
+        <td>Tags: <%= raw video.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'Upload Video', new_video_path %>

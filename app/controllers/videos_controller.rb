@@ -2,11 +2,18 @@ class VideosController < ApplicationController
 
   before_filter :authenticate_user!, except: [:show]
   def index
-    @videos = Video.all
+    if params[:tag]
+      @videos = Video.tagged_with(params[:tag])
+    else
+      @videos = Video.all
+    end
   end
 
   def new
     @video = Video.new
+  end
+
+  def edit
   end
 
   def create
@@ -31,7 +38,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :description, :downloads, :user_id)
+    params.require(:video).permit(:title, :description, :downloads, :user_id, :tag_list)
   end
 
 end
