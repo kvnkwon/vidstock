@@ -11,15 +11,17 @@
       <div class="row margin-40">
         <div class="col-sm-12 text-center">
           <div class="headertext">VIDSTOCK</div>
-          <form class="form-inline search-form clearfix">
+          
+          <%= search_form_for @search, url: videos_path, html: {class: "form-inline search-form clearfix"} do |f| %>
             <div class="search-form-input">
-              <input type="text" placeholder="Search videos by title or tags..">
+              <%= f.text_field :title_cont, placeholder: "Search videos by title or tags.." %>
             </div>
-            
+
             <div class="search-form-button">
-              <input type="submit" class="btn btn-success btn-block" value="Submit">
+              <%= f.submit class: "btn btn-success btn-block" %>
             </div>
-          </form>
+          <% end %>
+
           <% unless user_signed_in? %>
             <a class="btn btn-warning btn-lg" href="users/sign_in.html">Login</a>
             <a class="btn btn-info btn-signup btn-lg" href="users/sign_up.html">Sign up</a>
