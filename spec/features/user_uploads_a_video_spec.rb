@@ -33,7 +33,7 @@ feature "User uploads a video", %q{
       visit new_video_path
       fill_in "Title", with: "Beach sunset"
       fill_in "Description", with: "A beach sunset filmed in the Bahamas"
-      click_on "Upload"
+      click_button "Upload"
 
       expect(page).to have_content("Beach sunset")
       expect(Video.all.count).to eq(count + 1)
@@ -45,7 +45,7 @@ feature "User uploads a video", %q{
       sign_in_as(user)
       count = Video.all.count
       visit new_video_path
-      click_on "Upload"
+      click_button "Upload"
 
       expect(page).to have_content("Error!")
       expect(Video.all.count).to eq(count)

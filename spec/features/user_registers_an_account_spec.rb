@@ -17,14 +17,15 @@ feature "User registers an account", %q{
     fill_in "Email", with: "kwon@email.com"
     fill_in "Password", with: "12345678", match: :prefer_exact
     fill_in "Password confirmation", with: "12345678", match: :prefer_exact
-    click_on "Sign up"
+    #save_and_open_page
+    click_button "Sign up"
 
     expect(page).to have_content 'Sign out'
   end
 
   scenario 'with invalid input and get errors' do
     visit new_user_registration_path
-    click_on 'Sign up'
+    click_button 'Sign up'
 
     expect(page).to have_content "can't be blank"
   end
