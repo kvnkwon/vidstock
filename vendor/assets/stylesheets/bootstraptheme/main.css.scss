@@ -11,12 +11,90 @@
 /* ==========================================================================
    Global styles
    ========================================================================== */
-* {
-  margin:0
-}
 
 html, body{
   height:100%
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  moz-box-sizing: border-box;
+  vertical-align: middle
+}
+
+body {
+  font: 100 14px/21px helvetica, arial, sans-serif
+}
+
+div#kont {
+  position: relative
+}
+
+div#kont video {
+  width: 100%;
+}
+
+div#kont div#ent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0,0,0,0.4)
+}
+
+div#ent div#diagonal {
+  width: 300%;
+  height: 300%;
+  position: absolute;
+  left: -1500px;
+  top: -1000px
+}
+
+div#diagonal div {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  height: 6px;
+  -webkit-transform: rotate(-45deg)
+}
+
+div#ent div#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 50px 100px
+}
+
+div#content h1 {
+  font-size: 64px;
+  font-weight: 100;
+  line-height: 108px;
+  padding-top: 100px
+}
+
+div#content h2 {
+  text-transform: capitalize;
+  font-weight: 100
+}
+
+div#content p {
+  padding-right: 40px;
+  margin-right: 40px;
+  width: 360px;
+  height: 180px;
+  float: left;
+  border-right: 1px solid rgba(0,0,0,0.2)
+}
+
+div#content p:last-child {
+  border: none
 }
 
 
@@ -152,6 +230,10 @@ a:hover {
 
 .btn-sign {
   margin-top: 4%;
+}
+
+.btn-signup {
+  margin-left: 1%;
 }
 
 .more:hover {
