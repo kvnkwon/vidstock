@@ -2,12 +2,17 @@ class VideosController < ApplicationController
 
   before_filter :authenticate_user!, except: [:show]
   def index
-    # using search value in params for tagging
-    tagged = params[:q][:title_cont]
-    @tagged = Video.tagged_with(tagged, wild: true, any: true)    
-    @titled = Video.search(params[:q]).result
+    if params[:q]
+      # using search value in params for tagging
+      tagged = params[:q][:title_cont]
+      @tagged = Video.tagged_with(tagged, wild: true, any: true)    
+      @titled = Video.search(params[:q]).result
 
-    @videos = [[@tagged] + [@titled]].flatten.uniq
+      @videos = [[@tagged] + [@titled]].flatten.uniq
+
+    else
+      @videos = Video.all
+    end
   end
 
   def new
