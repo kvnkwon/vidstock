@@ -1,16 +1,24 @@
-<%= @video.title %>
-<%= @video.description %>
-<%= @video.downloads %>
+<div class="vimeo-wrapper">
+    <iframe src="//player.vimeo.com/video/34009539" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+<div class="container vid-show">
+  <div class="row margin-40">
+    <h2 id="video-title"><%= @video.title %></h2>
+    <%= @video.description %>
+    <%= @video.downloads %>
 
-<% @comments.each do |comment| %>
-<p><%= comment.content %></p>
-<% end %>
+    <% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+    <% end %>
 
-<%= simple_form_for [@video, @comment] do |f| %>
+    <%= simple_form_for [@video, @comment] do |f| %>
 
-  <%= f.input :content, label: 'Comment' %>
-  <%= f.button :submit, 'Submit' %>
+      <%= f.input :content, label: 'Comment' %>
+      <div class="form-actions">
+        <input class="btn btn-success btn-lg" name="commit" type="submit" value="Submit">
+      </div>
+    <% end %>
 
-<% end %>
-
-<%= link_to 'Browse Videos', videos_path %>
+    <%= link_to 'Browse other videos', videos_path %>
+  </div>
+</div>
