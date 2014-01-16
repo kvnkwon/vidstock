@@ -2,9 +2,8 @@
 
 FactoryGirl.define do
   factory :video do
-    title "MyString"
+    title "Kitty"
     downloads 1
-    description "MyText"
-    user
+    description "My cute cats"
   end
 end
