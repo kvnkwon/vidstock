@@ -21,12 +21,12 @@ feature "User searches for a video", %q{
     visit new_video_path
     fill_in "Title", with: "Kitty"
     fill_in "Description", with: "A Kitty filmed in the Bahamas"
+    fill_in "Vimeo link", with: "http://vimeo.com/34009539"
     fill_in "Tags (seperated by commas)", with: "cat, cute, beach, tropical, bahamas"
     click_button "Upload"
     visit root_path
     fill_in "q[title_cont]", with: "Kitty"
     click_button "Search"
-
     expect(page).to have_content("Kitty")
   end
 
@@ -35,6 +35,7 @@ feature "User searches for a video", %q{
     visit new_video_path
     fill_in "Title", with: "Kitty"
     fill_in "Description", with: "A Kitty filmed in the Bahamas"
+    fill_in "Vimeo link", with: "http://vimeo.com/34009539"
     fill_in "Tags (seperated by commas)", with: "cat, cute, beach, tropical, bahamas"
     click_button "Upload"
     visit root_path
@@ -49,6 +50,7 @@ feature "User searches for a video", %q{
     visit new_video_path
     fill_in "Title", with: "Kitty"
     fill_in "Description", with: "A Kitty filmed in the Bahamas"
+    fill_in "Vimeo link", with: "http://vimeo.com/34009539"
     fill_in "Tags (seperated by commas)", with: "cat, cute, beach, tropical, bahamas"
     click_button "Upload"
     visit root_path

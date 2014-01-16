@@ -33,6 +33,7 @@ feature "User uploads a video", %q{
       visit new_video_path
       fill_in "Title", with: "Beach sunset"
       fill_in "Description", with: "A beach sunset filmed in the Bahamas"
+      fill_in "Vimeo link", with: "http://vimeo.com/34009539"
       click_button "Upload"
 
       expect(page).to have_content("Beach sunset")

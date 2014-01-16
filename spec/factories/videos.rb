@@ -5,5 +5,7 @@ FactoryGirl.define do
     title "Kitty"
     downloads 1
     description "My cute cats"
+    video_link "http://vimeo.com/34009539"
+    user
   end
 end

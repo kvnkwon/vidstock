@@ -20,6 +20,7 @@ feature "User adds and removes tags to a video", %q{
     visit new_video_path
     fill_in "Title", with: "Beach sunset"
     fill_in "Description", with: "A beach sunset filmed in the Bahamas"
+    fill_in "Vimeo link", with: "http://vimeo.com/34009539"
     fill_in "Tags (seperated by commas)", with: "beach, tropical, bahamas"
     click_button "Upload"
 
