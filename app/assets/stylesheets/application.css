@@ -18,3 +18,5 @@
  *= require_self
  *= require_tree .
  */
+
+ .small-video {width: 100px;}

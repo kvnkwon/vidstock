@@ -29,6 +29,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'acts-as-taggable-on'
 gem 'ransack'
+gem 'vimeo'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -5,5 +5,6 @@ Vidstock::Application.routes.draw do
   resources :videos do
     resources :comments
   end
+  resources :user_videos 
   root to: 'pages#index'
 end

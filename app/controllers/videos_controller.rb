@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
 
   before_filter :authenticate_user!, except: [:show]
+  before_filter :authenticate_owner, only: [:edit, :destroy, :update]
   def index
     if params[:q]
       # using search value in params for tagging
@@ -25,7 +26,8 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
     @video.user = current_user
-    
+    @video.set_thumbnail!
+
     if @video.save
       flash[:notice] = 'Video was successfully uploaded!'
       redirect_to video_path(@video)  
@@ -42,6 +44,12 @@ class VideosController < ApplicationController
   end
 
   private
+
+  def authenticate_owner
+    unless Video.find(params[:id]).user == current_user
+      redirect_to videos_path, notice: "Know your place!"
+    end
+  end
 
   def video_params
     params.require(:video).permit(:title, :description, :downloads, :user_id, :tag_list, :video_link)

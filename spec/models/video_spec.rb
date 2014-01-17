@@ -34,4 +34,25 @@ describe Video do
     it { should belong_to(:user) }
   end
 
+  describe "Video Link Tests" do
+    good_urls = %w{https://vimeo.com/44067566
+      http://vimeo.com/44067566
+      https://www.vimeo.com/44067566
+      http://www.vimeo.com/44067566
+      https://vimeo.com/groups/name/videos/44067566
+      http://vimeo.com/groups/name/videos/44067566
+      https://vimeo.com/album/2222222/video/44067566
+      http://vimeo.com/album/2222222/video/44067566
+      https://vimeo.com/44067566?param=test
+      http://vimeo.com/44067566?param=test}
+
+    it 'returns video id from good urls' do
+      video = Video.new
+      good_urls.each do |url|
+        video.video_link = url
+        expect(video.vimeo_id).to eql('44067566')
+      end 
+    end
+
+  end
 end

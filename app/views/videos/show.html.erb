@@ -1,11 +1,10 @@
-<div class="vimeo-wrapper">
-    <iframe src="//player.vimeo.com/video/34009539" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+
+<%= render 'videos/vimeo', video: @video %>
+
 <div class="container vid-show">
   <div class="row margin-40">
     <h2 id="video-title"><%= @video.title %></h2>
     <%= @video.description %>
-    <%= @video.downloads %>
 
     <% @comments.each do |comment| %>
     <p><%= comment.content %></p>

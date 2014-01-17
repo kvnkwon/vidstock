@@ -12,6 +12,9 @@
   <tbody>
     <% @videos.each do |video| %>
       <tr>
+        <%= image_tag video.thumbnail %>
+        <td class='small-video'>
+          <%# render 'videos/vimeo', video: video %></td>
         <td><%= link_to "#{video.title}", video %></td>
         <td>Tags: <%= raw video.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
       </tr>
