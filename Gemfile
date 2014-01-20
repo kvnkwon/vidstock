@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'acts-as-taggable-on'
 gem 'ransack'
 gem 'vimeo'
+gem 'simple_form'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -44,7 +45,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'capybara'
-  gem 'simple_form'
+
 end
 
 group :development do
