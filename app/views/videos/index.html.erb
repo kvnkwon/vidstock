@@ -1,4 +1,3 @@
-<!--Content-->
     <section id="page-title" class="section">
       <div class="container">
         <div class="row">
@@ -8,183 +7,18 @@
         </div>
       </div>
     </section>
-
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <%= image_tag video.thumbnail %>
-        <td class='small-video'>
-          <%# render 'videos/vimeo', video: video %></td>
-        <td><%= link_to "#{video.title}", video %></td>
-        <td>Tags: <%= raw video.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-
-<%= link_to 'Upload Video', new_video_path %>
-      
-     
-    <!--Work-->
-    <section id="content2" class="section">
-      <div class="container text-center">          
-          
-          <div class="row margin-40">
-            
-            <!--Project Thumbnail One-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio1.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>Breakroom</h4>
-              </div>
-            </div>
-            
-            <!--Project Thumbnail Two-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio2.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>White Sneaker</h4>
-              </div>
-            </div>
-            
-            <!--Project Thumbnail Three-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio3.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>Theme Armada</h4>
-              </div>
-            </div>
-            
-            </div><!--End Row of Work-->
-            
-            <div class="row margin-40">
-            
-            <!--Project Thumbnail One-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio1.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>Breakroom</h4>
-              </div>
-            </div>
-            
-            <!--Project Thumbnail Two-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio2.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>White Sneaker</h4>
-              </div>
-            </div>
-            
-            <!--Project Thumbnail Three-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio3.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>Theme Armada</h4>
-              </div>
-            </div>
-            
-            </div><!--End Row of Work-->
-            
-            <div class="row margin-40">
-            
-            <!--Project Thumbnail One-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio1.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>Breakroom</h4>
-              </div>
-            </div>
-            
-            <!--Project Thumbnail Two-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio2.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>White Sneaker</h4>
-              </div>
-            </div>
-            
-            <!--Project Thumbnail Three-->
-            <div class="col-sm-4">
-              <div class="thumbs">
-                <img src="img/portfolio3.jpg" class="img-responsive" alt="Image Size 430x280">
-                <a href="individual-work.html">
-                  <span class="title">
-                    <span><i class="fa fa-link fa-2x"></i></span>
-                  </span> 
-                </a>
-              </div>
-              
-              <div class="project-title margin-30">
-                <h4>Theme Armada</h4>
-              </div>
-            </div>
-            
-            </div><!--End Row of Work-->
-          
-      </div>
-    </section>         
+  <div class="row-margin-60">
+    <ul class="video-tiles">
+      <% @videos.each do |video| %>
+        <li>
+          <%= link_to video_path(video) do %>
+            <%= image_tag(video.thumbnail, :size => "220x220", :class => "vid-thumbnail") %>
+            <br>
+            <!-- <td><%= link_to "#{video.title}", video %></td> -->
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    
+  </div>
+</div>

@@ -42,7 +42,7 @@ div#kont {
     min-width: 100%;
     height: 350px;
     background-color: black;
-    background-image: url('http://unsplash.s3.amazonaws.com/batch%209/vectorbeastcom-grass-sun.jpg');
+    background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52d09387ae003_1.JPG');
     background-repeat: no-repeat center center;
     background-size: cover;
 
@@ -255,6 +255,29 @@ p.lead {
   width: 70%;
   display: inline-block;
   font-size: 36px !important;
+}
+
+.vid-thumbnail{
+  padding-top: 2%;
+}
+
+.video-tiles {
+  /* this is needed for the parent 
+     to have height. read more 
+     http://css-tricks.com/all-about-floats/
+  */
+  overflow: hidden;
+  position: absolute;
+  display: inline-block;
+  /* adjust width of this element
+     if its width is not limited by its parent
+  width: 300px;
+  */
+}
+
+.video-tiles li {
+  /* add margins and paddings as you wish */
+  float:left;
 }
 
 a {
