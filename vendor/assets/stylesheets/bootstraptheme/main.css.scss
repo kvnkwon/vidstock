@@ -1,13 +1,3 @@
-/*
- * Lava v1.3
- *
- * Copyright 2013 Theme Armada
- * Visit us for more Bootstrap themes at:
- * http://www.themearmada.com
- *
- * Handcrafted with love in Atlanta!
- */
-
 /* ==========================================================================
    Global styles
    ========================================================================== */
@@ -259,6 +249,8 @@ p.lead {
 
 .vid-thumbnail{
   padding-top: 2%;
+  height: 150px;
+  width: 150px;
 }
 
 .video-tiles {
@@ -554,39 +546,6 @@ a:hover {
    Header Styles
    ========================================================================== */
 
-
-
-// .header {
-//   margin-bottom: 0px;
-//   background: #31363a;
-// }
-
-// .header .container {
-//   position: relative;
-//   z-index: 9;
-// }
-
-// .header .box {
-//   height: 650px;
-// }
-
-// .image-bg {
-//   background: url(../img/header1.jpg) no-repeat center center;
-//   background-size: cover;
-// }
-
-// .header-caption {
-//   background-color: transparent;
-//   position: static;
-//   padding: 0 20px;
-//   margin-top: 36%;
-//   text-align: left;
-// }
-
-
-
-
-
 .headertext {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
@@ -699,241 +658,6 @@ a:hover {
 
 .service-icons {
   padding-top: 20px;
-}
-
-
-/* ==========================================================================
-   About Page Styles
-   ========================================================================== */
-.progress {
-  background-color: #dfe5e8;
-  background-image: linear-gradient(to bottom, #dfe5e8, #dfe5e8);
-  background-repeat: repeat-x;
-  border-radius: 0 0 0 0;
-  box-shadow: 0 1px 2px transparent inset;
-  height: 50px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  position: relative;
-  margin: 0;
-  margin-top: 12px;
-  
-}
-
-
-.progress .bar {
-  -moz-box-sizing: border-box;
-  background-color: #A5B2B9;
-  background-image: none;
-  background-repeat: repeat-x;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
-  color: #FFFFFF;
-  float: left;
-  font-size: 12px;
-  height: 100%;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  transition: width 0.6s ease 0s;
-  width: 0;
-    
-  position: relative;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-}
-
-
-.progress .bar:after {
-  content: "";
-  position: absolute;
-  top: 17px;
-  right: -8px;
-  border-style: solid;
-  border-width: 8px 0 8px 8px;
-  border-color: transparent #A5B2B9;
-  display: block;
-  width: 0;
-  z-index: 1;
-}
-
-
-.progress .field {
-  color: #FFFFFF;
-  left: 20px;
-  line-height: 44px;
-  position: absolute;
-  z-index: 100;
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-
-}
-
-.progress .field-value {
-  color: #31363a;
-  right: 20px;
-  line-height: 44px;
-  position: absolute;
-  z-index: 100;
-  text-align: right;
-  font-weight: 300;
-  font-size: 19px;
-  
-  -webkit-animation-delay: 1.3s;
-  -moz-animation-delay: 1.3s;
-  animation-delay: 1.3s;
-
-}
-
-/* Animated Progress Bar onload */
-.bar-one       { width:100%;  -moz-animation:bar-one 1.0s ease-out;       -webkit-animation:bar-one 1.0s ease-out;        }
-.bar-two        { width:100%;  -moz-animation:bar-two 1.7s ease-out;        -webkit-animation:bar-two 1.7s ease-out;         }
-.bar-three      { width:100%; -moz-animation:bar-three 2.3s ease-out;   -webkit-animation:bar-three 2.3s ease-out;      }
-
-@-moz-keyframes bar-one       { 0%  { width:0px;} 100%{ width:100%;}   }
-@-moz-keyframes bar-two        { 0%  { width:0px;} 100%{ width:100%;}  }
-@-moz-keyframes bar-three      { 0%  { width:0px;} 100%{ width:100%;}  }
-
-@-webkit-keyframes bar-one       { 0%  { width:0px;} 100%{ width:100%;}   }
-@-webkit-keyframes bar-two        { 0%  { width:0px;} 100%{ width:100%;}  }
-@-webkit-keyframes bar-three      { 0%  { width:0px;} 100%{ width:100%;}  }
-
-
-
-
-/* Animated Fade in for Field Values */
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
- 
-.fade-in {
-    opacity:0;  /* make things invisible upon start */
-    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-    -moz-animation:fadeIn ease-in 1;
-    animation:fadeIn ease-in 1;
- 
-    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-    -moz-animation-fill-mode:forwards;
-    animation-fill-mode:forwards;
- 
-    -webkit-animation-duration:1s;
-    -moz-animation-duration:1s;
-    animation-duration:1s;
-}
-
-.display-none {
-  display: none;
-}
-
-.display {
-  display: block;
-}
-
-
-.stat {
-  padding-top:10px;
-  padding-bottom: 10px;
-}
-
-
-/* ==========================================================================
-   Pricing Styles
-   ========================================================================== */
-.pricing-table {
-  background: #dfe5e8;
-  width: 100%;
-  border: 1px solid #f1f1f1;
-  margin-top: 20px;
-  margin-bottom: 45px;
-}
-
-.pricing-table.active {
-  box-shadow: 1px 1px 16px #919191;
-  border: 0px solid #f1f1f1;
-  margin-top: 0px;
-}
-
-.pricing-table.active .headline {
-  background: #31363a;
-  height: 100px;
-  top: 0px;
-}
-
-.pricing-table.active .headline:after {
-  border-color: #31363a transparent;
-
-}
-
-.pricing-table li {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-
-.headline {
-  background: #ff755a;
-  padding: 6px 6px 0px 6px;
-  background-size: contain;
-  position: relative;
-  height: 66px;
-}
-
-.headline h2 {
-  color: #FFFFFF;
-  margin-top: 0px;
-}
-
-.headline:after
-{
-content: "";
-position: absolute;
-bottom: -15px;
-left: 44%;
-border-style: solid;
-border-width: 15px 15px 0;
-border-color: #ff755a transparent;
-display: block;
-z-index: 1;
-}
-
-.price {
-    background: none repeat scroll 0 0 #ffffff;
-    color: #31363A;
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: -15px;
-    padding-bottom: 20px;
-    padding-top: 45px;
-}
-
-.price small {
-  font-weight: 300;
-  color: #a5b2b9;
-}
-
-.info {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-weight: 300;
-  font-size: 13px;
-  color: #a5b2b9;
-}
-
-.features {
-  color: #31363a;
-  font-weight: bold;
-  padding-top: 12px;
-  padding-bottom: 15px;
-  border-bottom: 1px dotted #ffffff;
-}
-
-.features.first {
-  border-top: 1px dotted #ffffff;
-}
-
-.features.last {
-  padding-top: 17px;
-  padding-bottom: 20px;
 }
 
 
@@ -1238,12 +962,12 @@ h1 {
 }
 
 .navbar .nav > li > a {
-    padding-bottom: 10px;
-    padding-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .img-responsive {

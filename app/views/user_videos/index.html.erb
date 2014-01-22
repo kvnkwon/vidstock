@@ -1,24 +1,22 @@
-<!--Content-->
-    <section id="page-title" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <h3>My uploads</h3>
-          </div>
-        </div>
+<section id="page-title" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h3>My uploads</h3>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <%= link_to video_path(video) do %>
-          <%= image_tag video.thumbnail %>
-        <% end %>
+<tbody>
+  <% @videos.each do |video| %>
+    <tr>
+      <%= link_to video_path(video) do %>
+        <%= image_tag video.thumbnail %>
+      <% end %>
 
-        <td><%= link_to "#{video.title}", video %></td>
-        <td>Tags: <%= raw video.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <td><%= link_to "#{video.title}", video %></td>
+      <td>Tags: <%= raw video.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+    </tr>
+  <% end %>
+</tbody>
