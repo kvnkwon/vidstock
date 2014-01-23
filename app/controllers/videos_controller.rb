@@ -3,13 +3,14 @@ class VideosController < ApplicationController
   before_filter :authenticate_user!, except: [:show]
   before_filter :authenticate_owner, only: [:edit, :destroy, :update]
   def index
+    @search = Video.search(params[:q])
+
     if params[:q]
       # using search value in params for tagging
       tagged = params[:q][:title_cont]
       @tagged = Video.tagged_with(tagged, wild: true, any: true)    
-      @titled = Video.search(params[:q]).result
 
-      @videos = [[@tagged] + [@titled]].flatten.uniq
+      @videos = [[@tagged] + [@search.result]].flatten.uniq
 
     else
       @videos = Video.all
@@ -47,7 +48,7 @@ class VideosController < ApplicationController
 
   def authenticate_owner
     unless Video.find(params[:id]).user == current_user
-      redirect_to videos_path, notice: "Know your place!"
+      redirect_to videos_path, notice: "Unable to authenticate!"
     end
   end
 

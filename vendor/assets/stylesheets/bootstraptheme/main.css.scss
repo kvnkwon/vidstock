@@ -183,6 +183,12 @@ iframe,object,embed,vimeo,.videoWrapper,.vimeo-js {
   &.passwords_create {
     background: url(http://unsplash.s3.amazonaws.com/batch%206/blurred_lines.jpeg) no-repeat center;
   }
+  &.videos_new {
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c470899a2e1_1.JPG) no-repeat center;
+  }
+  &.videos_create {
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c470899a2e1_1.JPG) no-repeat center;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -270,6 +276,10 @@ p.lead {
 .video-tiles li {
   /* add margins and paddings as you wish */
   float:left;
+}
+
+.title-center {
+  text-align: center;
 }
 
 a {
@@ -718,10 +728,9 @@ select, input[type="text"], input[type="password"], input[type="datetime"], inpu
 } 
 
 .signup {
-  background: url(../img/grid_noise.png) repeat;
   background-color: #ebebeb;
   padding: 40px;
-  margin-top: 22px;
+  margin-top: 10%;
 }
 
 .boolean .optional {
@@ -769,6 +778,17 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
     width: 100%;
 }
 
+/* Upload Page */
+
+.upload-btn {
+  margin-top: 3%;
+}
+
+.upload {
+  background-color: #ebebeb;
+  padding: 40px;
+  margin-top: 10%;
+}
 
 
 /* ==========================================================================

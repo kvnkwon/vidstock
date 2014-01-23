@@ -1,9 +1,19 @@
-<%= simple_form_for @video do |f| %>
+<%# user sign up page %>
+<section id="signup">
+  <div class="container">
+    <div class="row margin-40">
+      <div class="col-sm-6 col-sm-offset-3 text-center upload">
+        <%= simple_form_for @video do |f| %>
+          <%= f.input :title, label: 'Title' %>
+          <%= f.input :description, label: 'Description' %>
+          <%= f.input :video_link, label: 'Vimeo link' %>
+          <%= f.input :tag_list, label: 'Tags (seperated by commas)' %>
+          <div class="form-actions">
+            <input class="btn btn-primary btn-lg upload-btn" name="commit" type="submit" value="Upload">
+          </div>
+        <% end %>
+      </div><!--End Col 6-->    
+    </div><!--End Row-->
+  </div><!--End Container-->
+</section>
 
-  <%= f.input :title, label: 'Title' %>
-  <%= f.input :description, label: 'Description' %>
-  <%= f.input :video_link, label: 'Vimeo link' %>
-  <%= f.input :tag_list, label: 'Tags (seperated by commas)' %>
-  <%= f.button :submit, 'Upload' %>
-
-<% end %>

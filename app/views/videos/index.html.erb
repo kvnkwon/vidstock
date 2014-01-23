@@ -3,22 +3,31 @@
     <div class="row">
       <div class="col-sm-12 text-center">
         <h3>Browse Videos</h3>
+        <%= search_form_for @search, url: videos_path, html: {class: "form-inline search-form clearfix"} do |f| %>
+            <div class="search-form-input">
+              <%= f.text_field :title_cont, placeholder: "Search videos by title or tags.." %>
+            </div>
+
+            <div class="search-form-button">
+              <%= f.submit class: "btn btn-success btn-block" %>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>
 </section>
 <div class="col-md-2"></div>
-<div class="col-md-8">
+<div class="col-md-8 center">
   <ul class="video-tiles">
     <% @videos.each do |video| %>
       <li>
         <%= link_to video_path(video) do %>
           <%= image_tag(video.thumbnail, :class => "vid-thumbnail") %>
           <br>
-          <!-- <td><%= link_to "#{video.title}", video %></td> -->
+          <td><%= link_to "#{video.title}", video %></td> 
         <% end %>
       </li>
     <% end %>
-  </ul>
+  </ul> 
 </div>
 <div class="col-md-2"></div>

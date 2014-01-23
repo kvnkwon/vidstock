@@ -10,6 +10,7 @@
     <p><%= comment.content %></p>
     <% end %>
 
+
     <%= simple_form_for [@video, @comment] do |f| %>
 
       <%= f.input :content, label: 'Comment' %>
