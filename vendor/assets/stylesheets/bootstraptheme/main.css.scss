@@ -108,12 +108,17 @@ div#content p:last-child {
   border: none
 }
 
-#video-title {
-  color: black;
+.video-title {
+  color: #FFBF00;
+  font-weight: 400;
+  font-size: 58px;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 .vid-show {
   margin-bottom: 3%;
+  background-color: #31363A;
 }
 
 
@@ -121,6 +126,7 @@ div#content p:last-child {
     position: relative;
     padding-bottom: 74.25%; /* 4:3 ratio */
     padding-top: 30px; /* IE6 workaround*/
+    margin-top: 4%;
     height: 0;
     overflow: hidden;
     body {
@@ -153,7 +159,7 @@ iframe,object,embed,vimeo,.videoWrapper,.vimeo-js {
   min-height: 100%;
   height: auto !important;
   height:100%;
-  margin: 0 auto -4em;
+  margin: 0 auto;
   @media (max-width: 480px) {
     padding: 0;
     width: 100%;
@@ -188,6 +194,15 @@ iframe,object,embed,vimeo,.videoWrapper,.vimeo-js {
   }
   &.videos_create {
     background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c470899a2e1_1.JPG) no-repeat center;
+  }
+  &.videos_show {
+    background-color: #31363A
+  }
+  &.videos_index {
+    background: url(https://s3.amazonaws.com/vidstock/wavegrid.png) repeat;
+  }
+  &.user_videos_index {
+    background: url(https://s3.amazonaws.com/vidstock/wavegrid.png) repeat;
   }
 }
 
@@ -256,7 +271,7 @@ p.lead {
 .vid-thumbnail{
   padding-top: 2%;
   height: 150px;
-  width: 150px;
+  width: 200px;
 }
 
 .video-tiles {
@@ -264,18 +279,35 @@ p.lead {
      to have height. read more 
      http://css-tricks.com/all-about-floats/
   */
-  overflow: hidden;
-  position: absolute;
+  position: relative;
   display: inline-block;
+  width: 100%;
   /* adjust width of this element
      if its width is not limited by its parent
   width: 300px;
   */
 }
+.browse_video_thumb{
+  display: inline-block;
+  padding: 8px;
+}
+.browse_video_title{
+  display: inline-block;
+  width: 50%;
+}
 
-.video-tiles li {
-  /* add margins and paddings as you wish */
-  float:left;
+#browse_tags {
+  margin-top: 10px;
+}
+
+.browse_vid_download {
+  margin-top: 10px;
+}
+
+.video-link {
+  color: black;
+  font-weight: 200;
+  font-size: 30px;
 }
 
 .title-center {
@@ -589,6 +621,10 @@ a:hover {
   }
 }
 
+.search-form, .browse-search {
+  margin-bottom: 80px;
+}
+
 .search-form-input {
   display: inline-block;
   width: 80%;
@@ -643,8 +679,21 @@ a:hover {
 }
 
 #page-title {
-  background: #ffffff;
+  opacity: 0.2;
+  background: black;
   margin-top: 50px;
+}
+
+.vid-index-search {
+  background-color: #31363a;
+}
+
+#browse-title {
+  color: #FFBF00;
+  margin-top: 70px;
+  font-weight: 400;
+  font-size: 45px;
+  margin-bottom: 30px;
 }
 
 .shaded-callout {
@@ -730,7 +779,7 @@ select, input[type="text"], input[type="password"], input[type="datetime"], inpu
 .signup {
   background-color: #ebebeb;
   padding: 40px;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 .boolean .optional {
@@ -787,9 +836,14 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 .upload {
   background-color: #ebebeb;
   padding: 40px;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
+#uploads-title {
+  color: #FFFFFF;
+  font-size: 58px;
+  font-weight: 400;
+}
 
 /* ==========================================================================
    Latest Work and Portfolio Styles
@@ -923,11 +977,99 @@ ul.social-icons li a:hover {
   text-decoration: none;
 }
 
+.browse-centered {
+  margin-left: 27%;
+}
 
-// comments
+.browse_videos_page {
+  margin-top: 50px;
+}
+
+.comments {
+  color: #a5b2b9;
+  font-size: 15px;
+  margin-left: 0.3%;
+}
+
+.vid-description {
+  color: #58D3F7;
+  font-size: 18px;
+  margin-left: 0.3%;
+  margin-bottom: 2%;
+}
 
 
+.text-required {
+  margin-top: 5%;
+}
 
+.comments-title {
+  font-weight: 300;
+  font-size: 28px;
+  color: #FFBF00;
+}
+
+.comment-input {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.comment-user {
+  color: #2E9AFE;
+}
+
+.back-link {
+  color: #FFBF00;
+}
+
+.back-link-block {
+  margin-top: 2%;
+}
+
+/* Pagination */
+.pagination {
+  background: white;
+  cursor: default;
+  height: 22px;
+  a, span, em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+  .disabled {
+    display: none;
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
+  a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5;
+    &:hover, &:focus {
+      color: #000033;
+      border-color: #000033;
+    }
+  }
+  .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    b {
+      color: #000033;
+      background: #2e6ab1 + 60;
+      padding: 0.1em 0.25em;
+    }
+  }
+}
 /* ==========================================================================
    Mobiles styles
    ========================================================================== */

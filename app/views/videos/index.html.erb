@@ -1,9 +1,9 @@
-<section id="page-title" class="section">
+<section class="vid-index-search" class="section">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 text-center">
-        <h3>Browse Videos</h3>
-        <%= search_form_for @search, url: videos_path, html: {class: "form-inline search-form clearfix"} do |f| %>
+        <h3 id="browse-title">Browse Videos</h3>
+        <%= search_form_for @search, url: videos_path, html: {class: "form-inline search-form browse-search clearfix"} do |f| %>
             <div class="search-form-input">
               <%= f.text_field :title_cont, placeholder: "Search videos by title or tags.." %>
             </div>
@@ -16,18 +16,25 @@
     </div>
   </div>
 </section>
-<div class="col-md-2"></div>
-<div class="col-md-8 center">
+<div class="col-md-1"></div>
+<div class="col-md-10 center browse_videos_page">
   <ul class="video-tiles">
     <% @videos.each do |video| %>
       <li>
+        <div class="browse_video_thumb">
         <%= link_to video_path(video) do %>
           <%= image_tag(video.thumbnail, :class => "vid-thumbnail") %>
-          <br>
-          <td><%= link_to "#{video.title}", video %></td> 
+          </div>
+          <div class="browse_video_title">
+            <%= link_to "#{video.title}", video, class: "video-link" %>
+            <p id="browse_tags">Tags: <%= tag_links_for(video) %></p>
+          </div>
         <% end %>
       </li>
     <% end %>
   </ul> 
+  <div class="text-center">
+    <%= will_paginate @videos, previous_label: h("<"), next_label: h(">") %>
+  </div>
 </div>
-<div class="col-md-2"></div>
+<div class="col-md-1"></div>

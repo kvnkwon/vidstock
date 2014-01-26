@@ -2,6 +2,7 @@ class Video < ActiveRecord::Base
   acts_as_taggable
   belongs_to :user, inverse_of: :videos
   has_many :comments, inverse_of: :video, dependent: :destroy
+
   validates_presence_of :title
   validates_presence_of :description
   validates_presence_of :video_link
@@ -17,6 +18,9 @@ class Video < ActiveRecord::Base
     end
   end
 
+  def vimeo_url
+    "http://www.vimeo.com/#{vimeo_id}"
+  end
 
   def set_thumbnail!
     self.thumbnail = Vimeo::Simple::Video.info(vimeo_id)[0]["thumbnail_large"]

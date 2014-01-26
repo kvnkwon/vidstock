@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @video = Video.find(params[:video_id])
     @comment = Comment.new(comment_params)
     @comment.video = @video
+    @comment.user = current_user
     if @comment.save
     else
       flash[:error] = "Error! Comment not saved."

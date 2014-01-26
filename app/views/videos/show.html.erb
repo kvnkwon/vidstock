@@ -1,24 +1,35 @@
-
-<%= render 'videos/vimeo', video: @video %>
-
 <div class="container vid-show">
   <div class="row margin-40">
-    <h2 id="video-title"><%= @video.title %></h2>
-    <%= @video.description %>
+    <%= render 'videos/vimeo', video: @video %>
+    <h2 class="video-title"><%= @video.title %></h2>
+    <p class="vid-description"><%= @video.description %></p>
+    <%= button_to 'Download', @video.vimeo_url, class: "btn btn-danger btn-lg"  %>
+
+    <h2 class="comments-title">
+      Comments
+    </h2>
 
     <% @comments.each do |comment| %>
-    <p><%= comment.content %></p>
+      <div class="comment-row">
+        <p class="comments">
+          <b class="comment-user"><%= comment.user.username %></b><br>
+          <%= comment.content %>
+        </p>
+     </div>
     <% end %>
 
 
     <%= simple_form_for [@video, @comment] do |f| %>
-
-      <%= f.input :content, label: 'Comment' %>
+      <div class="comment-input">
+        <%= f.input :content, label: false, placeholder: "Got something to say?", class: "comment-input" %>
+      </div>
       <div class="form-actions">
         <input class="btn btn-success btn-lg" name="commit" type="submit" value="Submit">
       </div>
     <% end %>
 
-    <%= link_to 'Browse other videos', videos_path %>
+    <div class="back-link-block">
+      <%= link_to 'Browse other videos', videos_path, class: "back-link" %>
+    </div>
   </div>
 </div>

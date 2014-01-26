@@ -4,17 +4,17 @@ class VideosController < ApplicationController
   before_filter :authenticate_owner, only: [:edit, :destroy, :update]
   def index
     @search = Video.search(params[:q])
-
+    
     if params[:q]
-      # using search value in params for tagging
       tagged = params[:q][:title_cont]
-      @tagged = Video.tagged_with(tagged, wild: true, any: true)    
-
-      @videos = [[@tagged] + [@search.result]].flatten.uniq
-
+      @videos = Video.tagged_with(tagged, wild: true, any: true)
+    elsif params[:tag]
+      @videos = Video.tagged_with(params[:tag], wild: true, any: true)
     else
       @videos = Video.all
     end
+
+    @videos = @videos.page(params[:page]).per_page(5)
   end
 
   def new

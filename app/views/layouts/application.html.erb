@@ -10,19 +10,13 @@
 
 <body>
   <%= render 'layouts/navbar' %>
-  <section id="wrapper" class='<%= controller_name + '_' + action_name %>'>
-  <%= render 'layouts/flash_notice' %>
-  <%= yield %>
-  <div class="push"></div>
+  
+  <section id="wrapper" class='clearfix <%= controller_name + '_' + action_name %>'>
+    <%= render 'layouts/flash_notice' %>
+    <%= yield %>
   </section>
+
   <%= render 'layouts/footer' %>
-  <!-- Javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="javascripts/jquery-1.10.1.min.js"><\/script>')</script>
-  <script src="vendor/assets/javascripts/bootstrap.min.js"></script>
-  <script src="vendor/assets/javascripts/main.js"></script>
 </body>
 
 </html>

@@ -21,6 +21,7 @@ describe User do
 
   describe "Association Tests" do
     it { should have_many(:videos).dependent(:destroy) }
+    it { should have_many(:comments).dependent(:destroy) }
   end
 
 end
