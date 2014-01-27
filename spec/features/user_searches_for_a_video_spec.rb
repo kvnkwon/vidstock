@@ -25,11 +25,10 @@ feature "User searches for a video", %q{
     fill_in "Tags (seperated by commas)", with: "cat, cute, beach, tropical, bahamas"
     click_button "Upload"
     visit root_path
-    fill_in "q[title_cont]", with: "Kitty"
+    fill_in "search[query]", with: "Kitty"
     click_button "Search"
 
     expect(page).to have_content("Kitty")
-    save_and_open_page
   end
 
   scenario 'Search for videos using tags' do
@@ -41,7 +40,7 @@ feature "User searches for a video", %q{
     fill_in "Tags (seperated by commas)", with: "cat, cute, beach, tropical, bahamas"
     click_button "Upload"
     visit root_path
-    fill_in "q[title_cont]", with: "cute, cats"
+    fill_in "search[query]", with: "cute"
     click_button "Search"
 
     expect(page).to have_content("cute")
@@ -56,7 +55,7 @@ feature "User searches for a video", %q{
     fill_in "Tags (seperated by commas)", with: "cat, cute, beach, tropical, bahamas"
     click_button "Upload"
     visit root_path
-    fill_in "q[title_cont]", with: "Wizard"
+    fill_in "search[query]", with: "Wizard"
     click_button "Search"
 
     expect(page).to have_content("Browse Videos")
