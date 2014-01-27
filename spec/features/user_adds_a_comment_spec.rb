@@ -17,7 +17,7 @@ feature "User creates a comment", %q{
     video = FactoryGirl.create(:video)
     sign_in_as(user)
     visit video_path(video)
-    fill_in 'Comment', with: 'Awesome footage!'
+    fill_in 'comment_content', with: 'Awesome footage!'
     click_on 'Submit'
 
     expect(page).to have_content 'Awesome footage!'

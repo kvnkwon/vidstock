@@ -1,9 +1,9 @@
 Vidstock::Application.routes.draw do
   devise_for :users
   get "pages/index"
-  
-  get 'tags/:tag', to: 'videos#index', as: :tag
-  
+
+  # get 'tags/:tag', to: 'videos#index', as: :tag
+
   resources :videos do
     resources :comments
   end

@@ -14,6 +14,7 @@ feature "User adds and removes tags to a video", %q{
 
 
   let(:user) { FactoryGirl.create(:user) }
+  let(:video) { FactoryGirl.create(:video, user_id: user.id) }
 
   scenario 'Add tags when I upload the video' do
     sign_in_as(user)
@@ -27,22 +28,13 @@ feature "User adds and removes tags to a video", %q{
     expect(page).to have_content("Video was successfully uploaded!")
   end
 
-  # scenario 'Add tags to a video I already uploaded' do
-  #   sign_in_as(user)
-  #   visit (edit video path)
-  #   fill_in "Tags (seperated by commas)", with: "beach, tropical, bahamas"
-  #   click_button "Save"
+  scenario 'Add and remove tags to a video I already uploaded' do
+    sign_in_as(user)
+    video
+    visit edit_video_path(video)
+    fill_in "Tags (seperated by commas)", with: "beach, tropical, bahamas, sunset"
+    click_button "Update"
 
-  #   expect(page).to have_content("Video was saved.")
-  # end
-
-  # scenario 'Remove tags to a video I already uploaded' do
-  #   sign_in_as(user)
-  #   visit (edit video path)
-  #   fill_in "Tags (seperated by commas)", with: "beach, tropical, bahamas"
-  #   click_button "Save"
-
-  #   expect(page).to have_content("Video was saved.")
-  # end
-
+    expect(page).to have_content("Video was updated successfully")
+  end
 end

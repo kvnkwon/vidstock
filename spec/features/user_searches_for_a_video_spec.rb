@@ -27,7 +27,9 @@ feature "User searches for a video", %q{
     visit root_path
     fill_in "q[title_cont]", with: "Kitty"
     click_button "Search"
+
     expect(page).to have_content("Kitty")
+    save_and_open_page
   end
 
   scenario 'Search for videos using tags' do

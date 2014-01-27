@@ -1,0 +1,15 @@
+<%= simple_form_for :search, url: videos_path, method: :get,
+  html: {class: "form-inline search-form browse-search clearfix"} do |f| %>
+    <div class="search-form-input">
+      <%= f.input :query,
+        label: false,
+        placeholder: "Search videos by title or tags..",
+        input_html: { value: (params[:search][:query] if params[:search]) } %>
+    </div>
+
+    <div class="search-form-button">
+      <%= f.button :submit,
+        value: "Search",
+        class: "btn btn-success btn-block" %>
+    </div>
+<% end %>

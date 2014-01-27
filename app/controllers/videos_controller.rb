@@ -2,18 +2,17 @@ class VideosController < ApplicationController
 
   before_filter :authenticate_user!, except: [:show]
   before_filter :authenticate_owner, only: [:edit, :destroy, :update]
+
   def index
-    @search = Video.search(params[:q])
-    
-    if params[:q]
-      tagged = params[:q][:title_cont]
-      @videos = Video.tagged_with(tagged, wild: true, any: true)
-    elsif params[:tag]
-      @videos = Video.tagged_with(params[:tag], wild: true, any: true)
+    if params[:search]
+      query = params[:search][:query]
+      @videos = Video.includes(taggings: [:tag])
+        .where("tags.name ilike ? OR title ilike ?",
+          "%#{query}%", "%#{query}%")
+        .references(:tags)
     else
       @videos = Video.all
     end
-
     @videos = @videos.page(params[:page]).per_page(5)
   end
 
@@ -29,7 +28,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     if @video.update(video_params)
       flash[:notice] = 'Video was updated successfully!'
-      redirect_to video_path(@video)  
+      redirect_to video_path(@video)
     else
       flash[:error] = 'Error! Could not update video!'
       render :new
@@ -51,7 +50,7 @@ class VideosController < ApplicationController
 
     if @video.save
       flash[:notice] = 'Video was successfully uploaded!'
-      redirect_to video_path(@video)  
+      redirect_to video_path(@video)
     else
       flash[:error] = 'Error! Could not upload video!'
       render :new

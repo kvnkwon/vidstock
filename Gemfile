@@ -28,7 +28,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 gem 'acts-as-taggable-on'
-gem 'ransack'
 gem 'vimeo'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'

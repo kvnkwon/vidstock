@@ -9,15 +9,8 @@
         <div class="col-sm-12 text-center">
           <div class="headertext">VIDSTOCK</div>
           
-          <%= search_form_for @search, url: videos_path, html: {class: "form-inline search-form clearfix"} do |f| %>
-            <div class="search-form-input">
-              <%= f.text_field :title_cont, placeholder: "Search videos by title or tags.." %>
-            </div>
 
-            <div class="search-form-button">
-              <%= f.submit class: "btn btn-success btn-block" %>
-            </div>
-          <% end %>
+          <%= render "videos/search_form" %>
 
           <% unless user_signed_in? %>
             <a class="btn btn-warning btn-lg" href="users/sign_in.html">Login</a>
