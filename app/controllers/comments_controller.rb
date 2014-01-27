@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
     @comment.video = @video
     @comment.user = current_user
     if @comment.save
+      redirect_to :back
     else
+      redirect_to video_path(@video)
       flash[:error] = "Error! Comment not saved."
     end
-    redirect_to video_path(@video)
   end
 
   def new
