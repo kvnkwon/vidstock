@@ -195,6 +195,12 @@ iframe,object,embed,vimeo,.videoWrapper,.vimeo-js {
   &.videos_create {
     background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c470899a2e1_1.JPG) no-repeat center;
   }
+  &.videos_edit {
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c470899a2e1_1.JPG) no-repeat center;
+  }
+  &.videos_update {
+    background: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c470899a2e1_1.JPG) no-repeat center;
+  }
   &.videos_show {
     background-color: #31363A
   }
@@ -1024,6 +1030,10 @@ ul.social-icons li a:hover {
 
 .back-link-block {
   margin-top: 2%;
+}
+
+.delete-btn {
+
 }
 
 /* Pagination */

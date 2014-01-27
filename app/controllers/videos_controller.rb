@@ -22,6 +22,26 @@ class VideosController < ApplicationController
   end
 
   def edit
+    @video = Video.find(params[:id])
+  end
+
+  def update
+    @video = Video.find(params[:id])
+    if @video.update(video_params)
+      flash[:notice] = 'Video was updated successfully!'
+      redirect_to video_path(@video)  
+    else
+      flash[:error] = 'Error! Could not update video!'
+      render :new
+    end
+  end
+
+  def destroy
+    video = Video.find(params[:id])
+    video.destroy
+    respond_to do |format|
+      format.html { redirect_to user_videos_path }
+    end
   end
 
   def create

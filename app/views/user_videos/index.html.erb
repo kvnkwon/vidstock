@@ -20,7 +20,10 @@
           <div class="browse_video_title">
             <%= link_to "#{video.title}", video, class: "video-link" %>
             <p id="browse_tags">Tags: <%= tag_links_for(video) %></p>
-            <%= button_to 'Edit', "#", class: "btn btn-success btn-lg"  %>
+            <div class="form-horizontal">
+              <%= link_to 'Edit', edit_video_path(video), class: "btn btn-success btn-med"  %>
+              <%= link_to 'Delete', video, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-med delete-btn"  %>
+            </div>
           </div>
         <% end %>
       </li>
