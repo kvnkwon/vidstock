@@ -1,5 +1,9 @@
-vidstock.herokuapp.com
+http://vidstock.herokuapp.com
 
 Vidstock
 
 Free to use stock footage exchange website. Users can upload their video onto Vimeo, then share the links on Vidstock with added tags. Other users can search for videos using tags and get exactly what they want.
+
+It requires:
+
+* Ruby >=2.0.0
